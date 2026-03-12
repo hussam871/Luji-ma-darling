@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-arabic: "Lateef", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-romantic-1: #640A15;
+  --color-romantic-2: #4B040E;
+  --color-romantic-3: #3A0208;
+  --color-romantic-4: #320308;
+  --color-romantic-5: #270205;
+}
+
+@layer base {
+  body {
+    @apply bg-romantic-5 text-white overflow-hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.arabic-text {
+  font-family: var(--font-arabic);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.heart-particle {
+  position: absolute;
+  bottom: -20px;
+  animation: float linear infinite;
+}
